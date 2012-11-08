@@ -1,143 +1,128 @@
-" Включаем мышку даже в текстовом режиме
-set mouse=a
-set mousehide "Спрятать курсор мыши когда набираем текст
+"set completeopt+=longest  " эти опции для автодополнения функций перменных по cntrl-space + создается маленькое окошко сверху для показа определения функции послe набора завершающейся скобки оно закрывается.
 
-"Вырубаем режим совместимости с VI:
-set nocompatible
 
-"Включаем распознавание типов файлов и типо-специфичные плагины:
-filetype on
-filetype plugin on
+set ts=4 " Табуляция равна 4-ем пробелам
+set sts=4 " Двигать блоки в визуальном режиме на 4 пробела с помощью клавиш < и >
+set sw=4 "
+set et
+set ai " Включаем автоотступ
 
-"Настройки табов для Python, согласно рекоммендациям
-set tabstop=4
-set shiftwidth=4
-set smarttab
-set expandtab "Ставим табы пробелами
-set softtabstop=4 "4 пробела в табе
-"Автоотступ
-set autoindent
-"Подсвечиваем все что можно подсвечивать
-let python_highlight_all = 1
-"Включаем 256 цветов в терминале, мы ведь работаем из иксов?
-"Нужно во многих терминалах, например в gnome-terminal
+" Делаем «умный» отступ в файлах содержащих Python-код после перечисленных
+" ключевых слов
+autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+
 set t_Co=256
-"Колоночка, чтобы показывать плюсики для скрытия блоков кода:
-set foldcolumn=1
+colorscheme desert256 " (Цветовая схема, работает у меня в rxvt-unicode с патчем для поддержки 256 цветов, увидеть её можно ниже на скриншоте)
 
-colorscheme desert256 "Цветовая схема
+let python_highlight_all = 1
 
-"Переносим на другую строчку, разрываем строки
+syntax on " Включить подсветку синтаксиса
+set nu " Включаем нумерацию строк
+
+set mousehide " Спрятать курсор мыши когда набираем текст
+set mouse=a " Включить поддержку мыши
+
+set termencoding=utf-8 " Кодировка терминала
+set novisualbell " Визуальный сигнал 
+set t_vb=
+set backspace=indent,eol,start whichwrap+=<,>,[,]
+set nocompatible " Vim не vi
+set showtabline=0
+set modifiable
+"set foldcolumn=4 "разобратся что за хрень
+set smartindent "умный отступ
 set wrap
 set linebreak
-
-" Раскладка по умолчанию - английская
-"set iminsert=0
-
-set ru
-set incsearch " инкруметный поиск по мере набора поисковой фразы regexp included!
-
-"map :tabprevious
-"map :tabnext
-"map :tabnew
-"map :tabclose
-
-"map :mksession! ~/.vim/customSession.vim
-"autocmd VimLeavePre * silent mksession! ~/.vim/lastSession.vim
-
-"set nohlsearch
-"set hlsearch!
-
-"set si! si? " Быстрое отключение smartinsert на случай вставить из буфера большой текст - что б форматирование не съехало
-
-"set completeopt+=longest " эти опции для автодополнения функций перменных по cntrl-space + создается маленькое окошко сверху для показа определения функции посл набора завершающейся скобки оно закрывается.
-
-syntax on
-
-" переключает кодировку буфера
- menu Encoding.koi8-r :e ++enc=8bit-koi8-r<CR>
- menu Encoding.windows-1251 :e ++enc=8bit-cp1251<CR>
- menu Encoding.ibm-866 :e ++enc=8bit-ibm866<CR>
- menu Encoding.utf-8 :e ++enc=2byte-utf-8 <CR>
- map <F8> :emenu Encoding.<TAB>
-
- " выбрать, в какой кодировке сохранить файл
- " menu FEnc.cp1251    :set fenc=cp1251<CR>
- " menu FEnc.koi8-r    :set fenc=koi8-r<CR>
- " menu FEnc.cp866     :set fenc=ibm866<CR>
- " menu FEnc.utf-8     :set fenc=utf-8<CR>
- " map  <S-F8> :emenu FEnc.<TAB>
-
-" строка статуса
-"set statusline=%<%f%h%m%r%=\ %{&encoding}\ %4lL\ %3cC\ %4P:%L
-set statusline=%<%f%h%m%r%=format=%{&fileformat}\ file=%{&fileencoding}\ enc=%{&encoding}\ %b\ 0x%B\ %l,%c%V\ %P
-
-
-" Минимальная высота окна
-set winminheight=0
-
-" Минимальная ширина окна
-set winminwidth=0
-
-" Всегда отображать статусную строку для каждого окна
-set laststatus=2
-
-" Опции автодополнения - включаем только меню с доступными вариантами
-" автодополнения (также, например, для omni completion может быть
-" окно предварительного просмотра).
-set completeopt=menu
-
-
-set tabstop=4 " Размер табуляции
-set autoindent " Копирует отступ от предыдущей строки
-set smartindent " Включаем 'умную' автоматическую расстановку отступов
-set wrap " Включаем перенос строк
-set linebreak " Перенос строк по словам, а не по буквам
-
-
-" Включаем отображение выполняемой в данный момент команды в правом нижнем
-" углу экрана.
-" " К примеру, если вы наберете 2d, то в правом нижнем углу экрана Vim
-" отобразит строку 2d.
-set showcmd
-
-" Включаем подсветку выражения, которое ищется в тексте
-set hlsearch
-" При поиске перескакивать на найденный текст в процессе набора строки
-set incsearch
-" Останавливать поиск при достижении конца файла
-set nowrapscan
-" Игнорировать регистр букв при поиске
-set ignorecase
-
-" Отключаем создание бэкапов
 set nobackup
-" Отключаем создание swap файлов
 set noswapfile
+set encoding=utf-8 " Кодировка файлов по умолчанию
+set fileencodings=utf8,cp1251 " Возможные кодировки файлов, если файл не в unicode кодировке, то будет использоваться cp1251
 
-" Нумерация строк
-set nu
+set helplang=en
 
-" Список кодировок файлов для автоопределения
-set fileencodings=utf-8,cp1251,koi8-r,cp866
 
-"Авто комплит по табу
+autocmd BufWritePre *.py normal m`:%s/\s\+$//e `` 
+fun! <SID>SetStatusLine()
+	let l:s1="%-3.3n\\ %f\\ %h%m%r%w"
+	let l:s2="[%{strlen(&filetype)?&filetype:'?'},%{&encoding},%{&fileformat}]"
+	let l:s3="%=\\ 0x%-8B\\ \\ %-14.(%l,%c%V%)\\ %<%P"
+	execute "set statusline=" . l:s1 . l:s2 . l:s3
+endfun
+set laststatus=2
+call <SID>SetStatusLine()
+
 function InsertTabWrapper()
-let col = col('.') - 1
-if !col || getline('.')[col - 1] !~ '\k'
-return "\"
-else
-return "\<c-p>"
-endif
+	let col = col('.') - 1
+	if !col || getline('.')[col - 1] !~ '\k'
+	return "\<tab>"
+	else
+	return "\<c-p>"
+	endif
 endfunction
-imap <c-r>=InsertTabWrapper()"Показываем все полезные опции автокомплита сразу
+imap <tab> <c-r>=InsertTabWrapper()<cr>
+
 set complete=""
 set complete+=.
 set complete+=k
 set complete+=b
 set complete+=t
 
-"Перед сохранением вырезаем пробелы на концах (только в .py файлах)
-autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
-"В .py файлах включаем умные отступы после ключевых слов
-autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+
+"  Настройка omnicomletion для Python (а так же для js, html и css)
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
+"""" добавление новых фич из github.com python-mode
+
+" Disable pylint checking every save
+let g:pymode_lint_write = 0
+
+" Set key 'R' for run python code
+let g:pymode_run_key = 'R'
+
+" Load show documentation plugin
+let g:pymode_doc = 1
+
+" Key for show python documentation
+let g:pymode_doc_key = 'K'
+
+
+"Load rope plugin
+let g:pymode_rope = 1
+
+" Auto create and open ropeproject
+let g:pymode_rope_auto_project = 1
+
+" Enable autoimport
+let g:pymode_rope_enable_autoimport = 1
+
+" Auto generate global cache
+let g:pymode_rope_autoimport_generate = 1
+
+let g:pymode_rope_autoimport_underlineds = 0
+
+let g:pymode_rope_codeassist_maxfixes = 10
+
+let g:pymode_rope_sorted_completions = 1
+
+let g:pymode_rope_extended_complete = 1
+
+let g:pymode_rope_autoimport_modules = ["os","shutil","datetime"]
+
+let g:pymode_rope_confirm_saving = 1
+
+let g:pymode_rope_global_prefix = "<C-x>p"
+
+let g:pymode_rope_local_prefix = "<C-c>r"
+
+let g:pymode_rope_vim_completion = 1
+
+let g:pymode_rope_guess_project = 1
+
+let g:pymode_rope_goto_def_newwin = ""
+
+let g:pymode_rope_always_show_complete_menu = 0
+
+
