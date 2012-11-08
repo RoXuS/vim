@@ -125,4 +125,9 @@ let g:pymode_rope_goto_def_newwin = ""
 
 let g:pymode_rope_always_show_complete_menu = 0
 
+" Run python code
+" Load run code plugin
+let g:pymode_run = 1
 
+" Key for run python code
+let g:pymode_run_key = '<leader>r'
