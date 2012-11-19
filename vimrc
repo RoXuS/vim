@@ -140,7 +140,7 @@ set showtabline=2
 set tabpagemax=15
 
 " NERDTree
-autocmd vimenter * NERDTree /home/evgen/pyprojects/
+autocmd vimenter * NERDTree /home/evgen/git/
 
 " NERDTree and vim close together
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
