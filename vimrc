@@ -150,3 +150,5 @@ map <F11> :NERDTreeToggle<cr>
 vmap <F11> <esc>:NERDTreeToggle<cr>i
 imap <F11> <esc>:NERDTreeToggle<cr>i
 
+:map vp :exec "w !vpaste ft=".&ft<CR>
+:vmap vp <ESC>:exec "'<,'>w !vpaste ft=".&ft<CR>
