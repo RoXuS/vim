@@ -1,4 +1,4 @@
-My repository for Vim configs.
+My repository for Vim configs...
 
 How To Install
 
