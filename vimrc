@@ -159,3 +159,8 @@ imap <F11> <esc>:NERDTreeToggle<cr>i
 
 " Auto completion via ctrl-space (instead of the nasty ctrl-x ctrl-o)
 set omnifunc=pythoncomplete#Complete
+
+" Pathogen
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
