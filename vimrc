@@ -77,6 +77,13 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
+"""" Close tags
+"""" Triggered when you type </
+autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
+
+autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
+
+
 """" добавление новых фич из github.com python-mode
 
 " Disable pylint checking every save
@@ -135,7 +142,10 @@ let g:pymode_run = 1
 " Key for run python code
 let g:pymode_run_key = '<leader>r'
 
-" Tabs
+" SuperTab plugin
+let g:SuperTabDefaultCompletionType = "context"
+
+" VimTabs
 " Show Tab line
 set showtabline=2
 set tabpagemax=15
@@ -152,6 +162,15 @@ map <F11> :NERDTreeToggle<cr>
 vmap <F11> <esc>:NERDTreeToggle<cr>i
 imap <F11> <esc>:NERDTreeToggle<cr>i
 
+" F10 - TagBar
+map <F10> :TagbarToggle<cr>
+vmap <F10> <esc>:TagbarToggle<cr>
+imap <F10> <esc>:TagbarToggle<cr>
+
+" End key == Ctrl+e
+" for delimitMate
+imap <C-e> <End>
+
 " Posting to Wgetpaste -- need install wgetpaste or pastebin then
 " s/wgetpaste/pastebin/ and s/wp/YourCommand(ex. pb)/
 :map wp :exec "w !wgetpaste -l Python"<CR>
@@ -159,3 +178,20 @@ imap <F11> <esc>:NERDTreeToggle<cr>i
 
 " Auto completion via ctrl-space (instead of the nasty ctrl-x ctrl-o)
 set omnifunc=pythoncomplete#Complete
+
+" Pathogen
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+" TagBar
+let g:tagbar_usearrows = 1
+nnoremap <leader>l :TagbarToggle<CR>
+
+" For working Git plugin
+set modifiable
+set write
+
+" Python Imports
+let g:PythonAutoAddImports = 1
+
+"silent setl modifiable
