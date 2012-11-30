@@ -62,6 +62,7 @@ endfunction
 imap <tab> <c-r>=InsertTabWrapper()<cr>
 
 set wildmenu " дикое меню :3"
+
 set completeopt=menu,menuone,longest,preview " всплывающая менюшка "
 set complete=""
 set complete+=.
@@ -140,7 +141,8 @@ set showtabline=2
 set tabpagemax=15
 
 " NERDTree
-autocmd vimenter * NERDTree /home/evgen/git/
+" autostart NERDTree and vim - don't need now
+"autocmd vimenter * NERDTree /home/evgen/git/
 
 " NERDTree and vim close together
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -150,5 +152,10 @@ map <F11> :NERDTreeToggle<cr>
 vmap <F11> <esc>:NERDTreeToggle<cr>i
 imap <F11> <esc>:NERDTreeToggle<cr>i
 
-:map vp :exec "w !vpaste ft=".&ft<CR>
-:vmap vp <ESC>:exec "'<,'>w !vpaste ft=".&ft<CR>
+" Posting to Wgetpaste -- need install wgetpaste or pastebin then
+" s/wgetpaste/pastebin/ and s/wp/YourCommand(ex. pb)/
+:map wp :exec "w !wgetpaste -l Python"<CR>
+:vmap wp <ESC>:exec "'<,'>w !wgetpaste -l Python<CR>
+
+" Auto completion via ctrl-space (instead of the nasty ctrl-x ctrl-o)
+set omnifunc=pythoncomplete#Complete
