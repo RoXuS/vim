@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/evgen/.vimrc'
-let g:netrw_dirhist_2='/home/evgen/git'
-let g:netrw_dirhist_3='/home/evgen/git/python/.git'
-let g:netrw_dirhist_4='/home/evgen/.vim'
