@@ -22,3 +22,6 @@
 [submodule "dotvim/bundle/pyflakes"]
 	path = dotvim/bundle/pyflakes
 	url = git://github.com/kevinw/pyflakes-vim.git
+[submodule "dotvim/bundle/python-imports"]
+	path = dotvim/bundle/python-imports
+	url = git://github.com/vim-scripts/python-imports.vim.git
