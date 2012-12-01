@@ -1,3 +1,6 @@
 [submodule "dotvim/bundle/delmitmate"]
 	path = dotvim/bundle/delmitmate
 	url = git://github.com/Raimondi/delimitMate.git
+[submodule "dotvim/bundle/Python-mode-klen"]
+	path = dotvim/bundle/Python-mode-klen
+	url = git://github.com/vim-scripts/Python-mode-klen.git
