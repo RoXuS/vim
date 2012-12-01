@@ -1,0 +1,3 @@
+[submodule "dotvim/bundle/delmitmate"]
+	path = dotvim/bundle/delmitmate
+	url = git://github.com/Raimondi/delimitMate.git
