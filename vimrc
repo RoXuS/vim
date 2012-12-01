@@ -197,3 +197,6 @@ set write
 let g:PythonAutoAddImports = 1
 
 "silent setl modifiable
+
+" For PowerLine
+let g:Powerline_symbols = 'fancy'
