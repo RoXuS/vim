@@ -25,3 +25,6 @@
 [submodule "dotvim/bundle/python-imports"]
 	path = dotvim/bundle/python-imports
 	url = git://github.com/vim-scripts/python-imports.vim.git
+[submodule "dotvim/bundle/tagbar"]
+	path = dotvim/bundle/tagbar
+	url = git://github.com/majutsushi/tagbar.git
