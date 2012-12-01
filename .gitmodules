@@ -7,3 +7,6 @@
 [submodule "dotvim/bundle/closetag"]
 	path = dotvim/bundle/closetag
 	url = git://github.com/docunext/closetag.vim.git
+[submodule "dotvim/bundle/vim-git"]
+	path = dotvim/bundle/vim-git
+	url = git://github.com/tpope/vim-git.git
