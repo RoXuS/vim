@@ -28,3 +28,6 @@
 [submodule "dotvim/bundle/tagbar"]
 	path = dotvim/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
+[submodule "dotvim/bundle/vimwiki"]
+	path = dotvim/bundle/vimwiki
+	url = git://github.com/vim-scripts/vimwiki.git
