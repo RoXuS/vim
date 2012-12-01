@@ -10,3 +10,6 @@
 [submodule "dotvim/bundle/vim-git"]
 	path = dotvim/bundle/vim-git
 	url = git://github.com/tpope/vim-git.git
+[submodule "dotvim/bundle/nerdcommenter"]
+	path = dotvim/bundle/nerdcommenter
+	url = git://github.com/scrooloose/nerdcommenter.git
