@@ -31,3 +31,6 @@
 [submodule "dotvim/bundle/vimwiki"]
 	path = dotvim/bundle/vimwiki
 	url = git://github.com/vim-scripts/vimwiki.git
+[submodule "dotvim/bundle/vim-project"]
+	path = dotvim/bundle/vim-project
+	url = git://github.com/shemerey/vim-project.git
