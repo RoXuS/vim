@@ -196,4 +196,8 @@ set write
 " Python Imports
 let g:PythonAutoAddImports = 1
 
-"silent setl modifiable
+" Fast save
+map <F2> :w<cr>
+vmap <F2> <Esc>:w<cr>
+imap <F2> <Esc>:w<cr>
+
