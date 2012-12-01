@@ -16,3 +16,6 @@
 [submodule "dotvim/bundle/nerdtree"]
 	path = dotvim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
+[submodule "dotvim/bundle/super-tab"]
+	path = dotvim/bundle/super-tab
+	url = git://github.com/ervandew/supertab.git
