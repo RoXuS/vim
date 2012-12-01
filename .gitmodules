@@ -13,9 +13,6 @@
 [submodule "dotvim/bundle/nerdcommenter"]
 	path = dotvim/bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
-[submodule "dotvim/bundle/supertab"]
-	path = dotvim/bundle/supertab
-	url = git://github.com/ervandew/supertab.git
 [submodule "dotvim/bundle/nerdtree"]
 	path = dotvim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
