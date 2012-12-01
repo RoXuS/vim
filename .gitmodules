@@ -19,3 +19,6 @@
 [submodule "dotvim/bundle/super-tab"]
 	path = dotvim/bundle/super-tab
 	url = git://github.com/ervandew/supertab.git
+[submodule "dotvim/bundle/pyflakes"]
+	path = dotvim/bundle/pyflakes
+	url = git://github.com/kevinw/pyflakes-vim.git
