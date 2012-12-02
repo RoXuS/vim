@@ -1,5 +1,8 @@
-"set completeopt+=longest  " эти опции для автодополнения функций перменных по cntrl-space + создается маленькое окошко сверху для показа определения функции послe набора завершающейся скобки оно закрывается.
+" Set custop map leader to ','
+let mapleader = ","
 
+" Drop hightlight search result
+noremap <leader><space> :nohls <CR>
 
 set ts=4 " Табуляция равна 4-ем пробелам
 set sts=4 " Двигать блоки в визуальном режиме на 4 пробела с помощью клавиш < и >
