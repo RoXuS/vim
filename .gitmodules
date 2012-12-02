@@ -6,7 +6,10 @@
 	url = git://github.com/vim-scripts/Python-mode-klen.git
 [submodule "dotvim/bundle/closetag"]
 	path = dotvim/bundle/closetag
-	url = git://github.com/docunext/closetag.vim.git
+    url = git://github.com/docunext/closetag.vim.git
+[submodule "dotvim/bundle/vim-git"]
+    path = dotvim/bundle/vim-git
+    url = git://github.com/tpope/vim-git.git
 [submodule "dotvim/bundle/nerdcommenter"]
 	path = dotvim/bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
@@ -31,3 +34,6 @@
 [submodule "dotvim/bundle/vim-powerline"]
 	path = dotvim/bundle/vim-powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
+[submodule "dotvim/bundle/git-vim"]
+	path = dotvim/bundle/git-vim
+	url = git://github.com/motemen/git-vim.git
