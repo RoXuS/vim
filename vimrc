@@ -204,3 +204,18 @@ map <F2> :w<cr>
 vmap <F2> <Esc>:w<cr>
 imap <F2> <Esc>:w<cr>
 
+" Change color scheme by day time
+" JUST FOR FUN
+" let dayBegin = 10
+" let dayScheme = "pyte" " day name scheme
+" let nightBegin = 19
+" let nightScheme = "rdark" " night name scheme
+" let currentTime = str2nr(strftime("%H"))
+"
+" if currentTime < nightBegin && currentTime < dayBegin
+"   silent execute "colorscheme " . nightScheme
+" elseif currentTime > nightBegin && currentTime > dayBegin
+"   silent execute "colorscheme " . nightScheme
+" else
+"   silent execute "colorscheme " . dayScheme
+" endif"
