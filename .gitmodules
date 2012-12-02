@@ -31,12 +31,9 @@
 [submodule "dotvim/bundle/vim-powerline"]
 	path = dotvim/bundle/vim-powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
-<<<<<<< HEAD
 [submodule "dotvim/bundle/git-vim"]
 	path = dotvim/bundle/git-vim
 	url = git://github.com/motemen/git-vim.git
 [submodule "dotvim/bundle/gist-vim"]
 	path = dotvim/bundle/gist-vim
 	url = git://github.com/mattn/gist-vim.git
-=======
->>>>>>> parent of 03f1ee1... try fix submodule vim-git
