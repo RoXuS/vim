@@ -204,6 +204,14 @@ map <F2> :w<cr>
 vmap <F2> <Esc>:w<cr>
 imap <F2> <Esc>:w<cr>
 
+" VimWiki
+let g:vimwiki_folding = 1
+let g:vimwiki_fold_lists = 1
+let g:vimwiki_list = [
+        \ {"path" : "~/Dropbox/wiki"},
+\ ]
+
+
 " Change color scheme by day time
 " JUST FOR FUN
 " let dayBegin = 10
