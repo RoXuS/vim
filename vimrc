@@ -212,6 +212,11 @@ let g:vimwiki_list = [
 \ ]
 
 
+" Settings vim-powerline
+set timeout timeoutlen=100 ttimeoutlen=50
+set laststatus=2
+
+
 " Change color scheme by day time
 " JUST FOR FUN
 " let dayBegin = 10
