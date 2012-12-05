@@ -34,9 +34,9 @@
 [submodule "dotvim/bundle/calendar"]
 	path = dotvim/bundle/calendar
 	url = git://github.com/mattn/calendar-vim.git
+[submodule "dotvim/bundle/jedi-vim"]
+	path = dotvim/bundle/jedi-vim
+    url = git://github.com/davidhalter/jedi-vim.git
 [submodule "dotvim/bundle/vimwiki"]
 	path = dotvim/bundle/vimwiki
 	url = git://github.com/weierophinney/vimwiki.git
-[submodule "dotvim/bundle/jedi-vim"]
-	path = dotvim/bundle/jedi-vim
-	url = git://github.com/davidhalter/jedi-vim.git
