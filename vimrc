@@ -216,6 +216,10 @@ let g:vimwiki_list = [
 set timeout timeoutlen=100 ttimeoutlen=50
 set laststatus=2
 
+" moving of code blocks
+vnoremap < <gv
+vnoremap > >gv
+
 
 " Change color scheme by day time
 " JUST FOR FUN
