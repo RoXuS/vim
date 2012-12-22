@@ -1,8 +1,13 @@
+autocmd! bufwritepost .vimrc source %
+
 " Set custop map leader to ','
 let mapleader = ","
 
 " Drop hightlight search result
-noremap <leader><space> :nohls <CR>
+"noremap <leader><space> :nohls <CR>
+noremap <C-n>  :nohls<CR>
+vnoremap <C-n> :nohls<CR>
+inoremap <C-n> :nohls<CR>
 
 set ts=4 " Табуляция равна 4-ем пробелам
 set sts=4 " Двигать блоки в визуальном режиме на 4 пробела с помощью клавиш < и >
@@ -53,16 +58,6 @@ fun! <SID>SetStatusLine()
 endfun
 set laststatus=2
 call <SID>SetStatusLine()
-
-function InsertTabWrapper()
-	let col = col('.') - 1
-	if !col || getline('.')[col - 1] !~ '\k'
-	return "\<tab>"
-	else
-	return "\<c-p>"
-	endif
-endfunction
-imap <tab> <c-r>=InsertTabWrapper()<cr>
 
 set wildmenu " дикое меню :3"
 
@@ -199,10 +194,14 @@ set write
 " Python Imports
 let g:PythonAutoAddImports = 1
 
-" Fast save
-map <F2> :w<cr>
-vmap <F2> <Esc>:w<cr>
-imap <F2> <Esc>:w<cr>
+" Better copy & paste 
+set pastetoggle=<F2>
+set clipboard=unnamed
+"
+noremap <C-Z> :update<CR>
+vnoremap <C-Z> <C-C>:update<CR>
+inoremap <C-Z> <C-O>:update<cr>
+"
 
 " VimWiki
 let g:vimwiki_folding = 1
@@ -213,13 +212,20 @@ let g:vimwiki_list = [
 
 
 " Settings vim-powerline
-set timeout timeoutlen=100 ttimeoutlen=50
+set timeout timeoutlen=200 ttimeoutlen=5
 set laststatus=2
+
+" Easier switch tabs
+map <Leader>n <esc>:tabprevious<CR>
+map <Leader>m <esc>:tabnext<CR>
 
 " moving of code blocks
 vnoremap < <gv
 vnoremap > >gv
 
+" Useful settings
+set history=700
+set undolevels=700
 
 " Change color scheme by day time
 " JUST FOR FUN
@@ -236,3 +242,5 @@ vnoremap > >gv
 " else
 "   silent execute "colorscheme " . dayScheme
 " endif"
+"
+
