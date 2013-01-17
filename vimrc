@@ -1,6 +1,9 @@
 " Set custop map leader to ','
 let mapleader = ","
 
+" открыть кончиг .vimrc
+map ,vv :tabnew $MYVIMRC<CR> 
+
 " Drop hightlight search result
 noremap <leader><space> :nohls <CR>
 
