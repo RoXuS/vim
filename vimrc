@@ -7,10 +7,21 @@ let mapleader = ","
 map ,vv :tabnew $MYVIMRC<CR> 
 
 " Drop hightlight search result
-"noremap <leader><space> :nohls <CR>
-noremap <C-n>  :nohls<CR>
-vnoremap <C-n> :nohls<CR>
-inoremap <C-n> :nohls<CR>
+" noremap <leader><space> :nohls <CR>
+noremap <C-h>  :nohls<CR>
+vnoremap <C-h> :nohls<CR>
+inoremap <C-h> :nohls<CR>
+
+
+""" Tab navigation
+" tabnext
+noremap <C-n>  :tabnext<CR>
+vnoremap <C-n> :tabnext<CR>
+inoremap <C-n> :tabnext<CR>
+" tabprevious
+noremap <C-n>  :tabprevious<CR>
+vnoremap <C-n> :tabprevious<CR>
+inoremap <C-n> :tabprevious<CR>
 
 set ts=4 " Табуляция равна 4-ем пробелам
 set sts=4 " Двигать блоки в визуальном режиме на 4 пробела с помощью клавиш < и >
@@ -52,25 +63,25 @@ set fileencodings=utf8,cp1251 " Возможные кодировки файло
 set helplang=en
 
 
-autocmd BufWritePre *.py normal m`:%s/\s\+$//e `` 
-fun! <SID>SetStatusLine()
-	let l:s1="%-3.3n\\ %f\\ %h%m%r%w"
-	let l:s2="[%{strlen(&filetype)?&filetype:'?'},%{&encoding},%{&fileformat}]"
-	let l:s3="%=\\ 0x%-8B\\ \\ %-14.(%l,%c%V%)\\ %<%P"
-	execute "set statusline=" . l:s1 . l:s2 . l:s3
-endfun
-set laststatus=2
-call <SID>SetStatusLine()
+"autocmd BufWritePre *.py normal m`:%s/\s\+$//e `` 
+"fun! <SID>SetStatusLine()
+	"let l:s1="%-3.3n\\ %f\\ %h%m%r%w"
+	"let l:s2="[%{strlen(&filetype)?&filetype:'?'},%{&encoding},%{&fileformat}]"
+	"let l:s3="%=\\ 0x%-8B\\ \\ %-14.(%l,%c%V%)\\ %<%P"
+	"execute "set statusline=" . l:s1 . l:s2 . l:s3
+"endfun
+"set laststatus=2
+"call <SID>SetStatusLine()
 
 set wildmenu " дикое меню :3"
 
-set completeopt=menu,menuone,longest,preview " всплывающая менюшка "
+"au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+set completeopt=menu,menuone,longest ",preview " всплывающая менюшка "
 set complete=""
 set complete+=.
 set complete+=k
 set complete+=b
 set complete+=t
-
 
 "  Настройка omnicomletion для Python (а так же для js, html и css)
 autocmd FileType python set omnifunc=pythoncomplete#Complete
@@ -91,7 +102,7 @@ autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bu
 let g:pymode_lint_write = 0
 
 " Set key 'R' for run python code
-let g:pymode_run_key = 'R'
+" let g:pymode_run_key = 'R'
 
 " Load show documentation plugin
 let g:pymode_doc = 1
@@ -138,10 +149,10 @@ let g:pymode_rope_always_show_complete_menu = 0
 
 " Run python code
 " Load run code plugin
-let g:pymode_run = 1
+" let g:pymode_run = 0
 
 " Key for run python code
-let g:pymode_run_key = '<leader>r'
+" let g:pymode_run_key = '<leader>r'
 
 " SuperTab plugin
 let g:SuperTabDefaultCompletionType = "context"
@@ -177,9 +188,6 @@ imap <C-e> <End>
 :map wp :exec "w !wgetpaste -l Python"<CR>
 :vmap wp <ESC>:exec "'<,'>w !wgetpaste -l Python<CR>
 
-" Auto completion via ctrl-space (instead of the nasty ctrl-x ctrl-o)
-set omnifunc=pythoncomplete#Complete
-
 " Pathogen
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
@@ -199,7 +207,6 @@ let g:PythonAutoAddImports = 1
 
 " Better copy & paste 
 set pastetoggle=<F2>
-set clipboard=unnamed
 "
 noremap <C-Z> :update<CR>
 vnoremap <C-Z> <C-C>:update<CR>
@@ -215,7 +222,7 @@ let g:vimwiki_list = [
 
 
 " Settings vim-powerline
-set timeout timeoutlen=200 ttimeoutlen=5
+set timeout timeoutlen=500 ttimeoutlen=50
 set laststatus=2
 
 " Easier switch tabs
@@ -229,6 +236,7 @@ vnoremap > >gv
 " Useful settings
 set history=700
 set undolevels=700
+
 
 " Change color scheme by day time
 " JUST FOR FUN
