@@ -43,3 +43,6 @@
 [submodule "dotvim/bundle/tabular"]
 	path = dotvim/bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
+[submodule "dotvim/bundle/Indent-Guides"]
+	path = dotvim/bundle/Indent-Guides
+	url = git://github.com/vim-scripts/Indent-Guides.git
