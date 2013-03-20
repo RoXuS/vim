@@ -46,6 +46,3 @@
 [submodule "dotvim/bundle/Indent-Guides"]
 	path = dotvim/bundle/Indent-Guides
 	url = git://github.com/vim-scripts/Indent-Guides.git
-[submodule "dotvim/bundle/pydiction"]
-	path = dotvim/bundle/pydiction
-	url = git://github.com/rkulla/pydiction.git
