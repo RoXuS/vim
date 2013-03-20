@@ -15,13 +15,13 @@ inoremap <C-h> :nohls<CR>
 
 """ Tab navigation
 " tabnext
-noremap <C-n>  :tabnext<CR>
-vnoremap <C-n> :tabnext<CR>
-inoremap <C-n> :tabnext<CR>
+"noremap <C-n>  :tabnext<CR>
+"vnoremap <C-n> :tabnext<CR>
+"inoremap <C-n> :tabnext<CR>
 " tabprevious
-noremap <C-n>  :tabprevious<CR>
-vnoremap <C-n> :tabprevious<CR>
-inoremap <C-n> :tabprevious<CR>
+"noremap <C-m>  :tabprevious<CR>
+"vnoremap <C-m> :tabprevious<CR>
+"inoremap <C-m> :tabprevious<CR>
 
 set ts=4 " Табуляция равна 4-ем пробелам
 set sts=4 " Двигать блоки в визуальном режиме на 4 пробела с помощью клавиш < и >
@@ -61,17 +61,6 @@ set encoding=utf-8 " Кодировка файлов по умолчанию
 set fileencodings=utf8,cp1251 " Возможные кодировки файлов, если файл не в unicode кодировке, то будет использоваться cp1251
 
 set helplang=en
-
-
-"autocmd BufWritePre *.py normal m`:%s/\s\+$//e `` 
-"fun! <SID>SetStatusLine()
-	"let l:s1="%-3.3n\\ %f\\ %h%m%r%w"
-	"let l:s2="[%{strlen(&filetype)?&filetype:'?'},%{&encoding},%{&fileformat}]"
-	"let l:s3="%=\\ 0x%-8B\\ \\ %-14.(%l,%c%V%)\\ %<%P"
-	"execute "set statusline=" . l:s1 . l:s2 . l:s3
-"endfun
-"set laststatus=2
-"call <SID>SetStatusLine()
 
 set wildmenu " дикое меню :3"
 
@@ -149,10 +138,10 @@ let g:pymode_rope_always_show_complete_menu = 0
 
 " Run python code
 " Load run code plugin
-" let g:pymode_run = 0
+let g:pymode_run = 0
 
 " Key for run python code
-" let g:pymode_run_key = '<leader>r'
+let g:pymode_run_key = '<leader>r'
 
 " SuperTab plugin
 let g:SuperTabDefaultCompletionType = "context"
@@ -162,7 +151,11 @@ let g:SuperTabDefaultCompletionType = "context"
 set showtabline=2
 set tabpagemax=15
 
-" NERDTree
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""" NERDTree """"""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " autostart NERDTree and vim - don't need now
 "autocmd vimenter * NERDTree /home/evgen/git/
 
@@ -179,20 +172,37 @@ map <F10> :TagbarToggle<cr>
 vmap <F10> <esc>:TagbarToggle<cr>
 imap <F10> <esc>:TagbarToggle<cr>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " End key == Ctrl+e
 " for delimitMate
 imap <C-e> <End>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""" WgetPaste """""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Posting to Wgetpaste -- need install wgetpaste or pastebin then
 " s/wgetpaste/pastebin/ and s/wp/YourCommand(ex. pb)/
 :map wp :exec "w !wgetpaste -l Python"<CR>
 :vmap wp <ESC>:exec "'<,'>w !wgetpaste -l Python<CR>
 
-" Pathogen
+""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""" Pathgen """""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 call pathogen#infect()
 filetype plugin indent on
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " TagBar
 let g:tagbar_usearrows = 1
@@ -213,6 +223,9 @@ vnoremap <C-Z> <C-C>:update<CR>
 inoremap <C-Z> <C-O>:update<cr>
 "
 
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""" VimWiki """""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
 " VimWiki
 let g:vimwiki_folding = 1
 let g:vimwiki_fold_lists = 1
@@ -220,6 +233,8 @@ let g:vimwiki_list = [
         \ {"path" : "~/Dropbox/wiki"},
 \ ]
 
+""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Settings vim-powerline
 set timeout timeoutlen=500 ttimeoutlen=50
@@ -255,3 +270,31 @@ set undolevels=700
 " endif"
 "
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""" Indent-Guides """""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+set ts=4 sw=4 et
+let g:indent_guides_start_level=1
+let g:indent_guides_guide_size=1
+hi IndentGuidesOdd  ctermbg=black
+hi IndentGuidesEven ctermbg=darkgrey
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""" Tabular """""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
+if exists(":Tabularize")
+    nmap <Leader>a= :Tabularize /=<CR>
+    vmap <Leader>a= :Tabularize /=<CR>
+    nmap <Leader>a: :Tabularize /:<CR>
+    vmap <Leader>a: :Tabularize /:<CR>
+endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
