@@ -73,7 +73,7 @@ set complete+=b
 set complete+=t
 
 "  Настройка omnicomletion для Python (а так же для js, html и css)
-autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
@@ -128,7 +128,8 @@ let g:pymode_rope_global_prefix = "<C-x>p"
 
 let g:pymode_rope_local_prefix = "<C-c>r"
 
-let g:pymode_rope_vim_completion = 1
+" автодополнение rope
+let g:pymode_rope_vim_completion = 0
 
 let g:pymode_rope_guess_project = 1
 
@@ -166,6 +167,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 map <F11> :NERDTreeToggle<cr>
 vmap <F11> <esc>:NERDTreeToggle<cr>i
 imap <F11> <esc>:NERDTreeToggle<cr>i
+
+" игнор файлов
+let NERDTreeIgnore=['\.pyc$']
 
 " F10 - TagBar
 map <F10> :TagbarToggle<cr>
@@ -298,3 +302,6 @@ endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
+let g:neocomplcache_enable_at_startup = 1
