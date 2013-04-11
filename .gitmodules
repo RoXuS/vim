@@ -46,3 +46,6 @@
 [submodule "dotvim/bundle/Indent-Guides"]
 	path = dotvim/bundle/Indent-Guides
 	url = git://github.com/vim-scripts/Indent-Guides.git
+[submodule "dotvim/bundle/vim-conque"]
+	path = dotvim/bundle/vim-conque
+	url = git://github.com/rson/vim-conque.git
