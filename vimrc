@@ -128,6 +128,7 @@ let g:pymode_rope_global_prefix = "<C-x>p"
 
 let g:pymode_rope_local_prefix = "<C-c>r"
 
+" автодополнение rope
 let g:pymode_rope_vim_completion = 1
 
 let g:pymode_rope_guess_project = 1
@@ -166,6 +167,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 map <F11> :NERDTreeToggle<cr>
 vmap <F11> <esc>:NERDTreeToggle<cr>i
 imap <F11> <esc>:NERDTreeToggle<cr>i
+
+" игнор файлов
+let NERDTreeIgnore=['\.pyc$']
 
 " F10 - TagBar
 map <F10> :TagbarToggle<cr>
@@ -298,3 +302,22 @@ endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""" Vim-Rails """""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType cucumber compiler cucumber | setl makeprg=cucumber\ \"%:p\"
+autocmd FileType ruby
+      \ if expand('%') =~# '_test\.rb$' |
+      \   compiler rubyunit | setl makeprg=testrb\ \"%:p\" |
+      \ elseif expand('%') =~# '_spec\.rb$' |
+      \   compiler rspec | setl makeprg=rspec\ \"%:p\" |
+      \ else |
+      \   compiler ruby | setl makeprg=ruby\ -wc\ \"%:p\" |
+      \ endif
+autocmd User Bundler
+      \ if &makeprg !~# 'bundle' | setl makeprg^=bundle\ exec\  | endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
