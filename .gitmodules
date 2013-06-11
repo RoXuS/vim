@@ -17,8 +17,8 @@
 	path = dotvim/bundle/super-tab
 	url = git://github.com/ervandew/supertab.git
 [submodule "dotvim/bundle/pyflakes"]
-	path = dotvim/bundle/pyflakes
-	url = git://github.com/kevinw/pyflakes-vim.git
+    path = dotvim/bundle/pyflakes
+    url = git://github.com/kevinw/pyflakes-vim.git
 [submodule "dotvim/bundle/python-imports"]
 	path = dotvim/bundle/python-imports
 	url = git://github.com/vim-scripts/python-imports.vim.git
@@ -46,3 +46,6 @@
 [submodule "dotvim/bundle/Indent-Guides"]
 	path = dotvim/bundle/Indent-Guides
 	url = git://github.com/vim-scripts/Indent-Guides.git
+[submodule "dotvim/bundle/vim-conque"]
+	path = dotvim/bundle/vim-conque
+	url = git://github.com/basepi/vim-conque.git
